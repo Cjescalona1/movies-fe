@@ -15,9 +15,8 @@ export class MoviedbService implements PipeTransform{
 
   constructor(private http: HttpClient) { }
 
-
-
-  //Metodo para pasar URL para peticion
+  transform(movie: any): any { 
+  }
 
   getQuery(query: string) {
     const url = `https://api.themoviedb.org/3${query}&api_key=${
@@ -42,6 +41,15 @@ export class MoviedbService implements PipeTransform{
     );
   }
   //movie top rated 
+  getTopRatedMovies() {
+    return this.getQuery("/movie/top_rated?").pipe(
+      map((data: any) => data.results)
+    );
+  }
+
+
+
+
 
 
   getQueryforPelicula(query: string) {
@@ -60,8 +68,6 @@ export class MoviedbService implements PipeTransform{
     );
   }
 
-
-
   getBusquedaPeliculas(termino: string) {
     return this.getQuery(
       `/search/movie?query=${termino}&sort_by=popularity.desc`
@@ -74,22 +80,6 @@ export class MoviedbService implements PipeTransform{
     );
   }
   
-
-  transform(movie: any): any {
-
-    // path url generica para obtener imagenes
-    let url = "http://image.tmdb.org/t/p/w400";
-
-    if (movie.poster_path) {
-      return url + movie.poster_path;
-    } else {
-      if (movie.backdrop_path) {
-        return url + movie.backdrop_path;
-      } else {
-        //return "assets/img/noimage.png";
-      }
-    }
-  }
 
 
 }

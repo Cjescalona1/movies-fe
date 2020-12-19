@@ -1,7 +1,6 @@
 .top-container{
-	padding: 5%;
- 
-	height: 200px;
+	padding:   5%; 
+	height: 250px;
 }
 
 .search-bar{
@@ -55,9 +54,16 @@
 .carousel-div-lg{display: none}
 }
 
+.clamed-img{
+	width: 16%;
+	display: flex;
+	flex-direction: horizontal;	
+}
+
+
 @media( min-width: 760px ){
 .most-pop{
-	margin: 5%;
+	margin: 3%;
 }
 .input-search{ 
 	font-size: 1.5em;
