@@ -51,21 +51,20 @@
 }
 
 
-@media( max-width: 800px ){
+@media( max-width: 760px ){
 .carousel-div-lg{display: none}
 }
 
-@media( min-width: 800px ){
+@media( min-width: 760px ){
 .most-pop{
 	margin: 5%;
 }
 .input-search{ 
-		font-size: 1.5em;
-	    height: 45px; 
+	font-size: 1.5em;
+	height: 45px; 
  }
 .carousel-div-lg{
-	height: 250px;
-	border:green solid 1px;
+	height: 250px; 
 	color: white;
 }
 .carousel-div-md{display: none}

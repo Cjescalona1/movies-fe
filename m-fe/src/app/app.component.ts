@@ -12,27 +12,33 @@ export class AppComponent {
   principal: any;
   trendMovies: any[] = [];
   trendSeries: any[] = [];
-  loading: boolean;	
+  loadingM: boolean;	
+  loadingS: boolean;	
   image: any[];
 
-constructor(private moviedb: MoviedbService) {
+ constructor(private moviedb: MoviedbService) {
+    this.loadingM = true;
+    this.loadingS = true;
 
-    this.loading = true;
     this.moviedb.getTrendingMovies()
-      .subscribe((data: any) => {
+       .subscribe((data: any) => {
       	this.principal = data[0];
         for (var i = 0; i < 10; i++) {
         this.trendMovies[i] = data[i];
+    	this.loadingM = false;
+        
         }
-		});
-
-	this.moviedb.getTrendingSeries()
-      .subscribe((data2: any) => {
-      	for (var j = 0; j < 10; j++) {
-      	this.trendSeries[j] = data2[j];
-      	}
+	});
+		this.moviedb.getTrendingSeries()
+	     .subscribe((data2: any) => {
+	      	for (var j = 0; j < 10; j++) {
+	      	this.trendSeries[j] = data2[j];
+    		this.loadingS = false;
+	      	
+	      	}
 		
-		});
+		});  
+
   }
 
 }
