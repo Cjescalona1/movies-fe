@@ -1,5 +1,7 @@
 <div class="top-container" 
-style="background-image: url(http://image.tmdb.org/t/p/w500/{{principal.poster_path}});
+style="background-image: 
+url(http://image.tmdb.org/t/p/w500/{{principal.backdrop_path}});
+background-color: #ccc;
 background-repeat: no-repeat;
 background-size: cover; 
 background-position: center; 
@@ -11,8 +13,8 @@ background-position: center;
   </div>
   
   <div class="most-pop">
-    <h2>{{principal.original_title}}</h2>  
-      <h2>Más Popular</h2>
+    <h1 style="font-weight: bold;">{{principal.original_title}}</h1>  
+      <h2 style="color :#f7915c">Más Popular</h2>
       <div style="display: inline-flex;"> 
         <div *ngIf="principal.vote_average/2 >= 4.5"> * </div>
         <div *ngIf="principal.vote_average/2 >= 3.5"> * </div>
@@ -24,21 +26,56 @@ background-position: center;
   </div>
 </div>
 
-<div class="carousel-div">
-  <h3 class="carousel-title">
+<div class="carousel-div-md" >
+  <h3 style="color :#f7915c" class="carousel-title">
   Peliculas populares 
-  </h3>
+  </h3> 
+  <carousel arrowsOutside cellsToShow="4" style="height: 110px;">
+    <div class="carousel-cell" *ngFor="let item of trendMovies; let i = index">
+        <img src="http://image.tmdb.org/t/p/w500/{{trendMovies[i].poster_path}}">
+    </div>
+  </carousel>    
 </div>
 
-<div class="carousel-div">
-  <h3 class="carousel-title">
-  Series populares
-  </h3>
+<div class="carousel-div-lg" >
+  <h3  style="color :#f7915c" class="carousel-title">
+  Peliculas populares 
+  </h3> 
+  <carousel arrowsOutside cellsToShow="8" style="height: 180px;">
+    <div class="carousel-cell" *ngFor="let item of trendMovies; let i = index">
+        <img src="http://image.tmdb.org/t/p/w500/{{trendMovies[i].poster_path}}">
+    </div>
+  </carousel>    
 </div>
+
+
+<div class="carousel-div-md" >
+  <h3 style="color :#f7915c" class="carousel-title">
+  Series populares 
+  </h3> 
+  <carousel arrowsOutside cellsToShow="4" style="height: 110px;">
+    <div class="carousel-cell" *ngFor="let item of trendSeries; let i = index">
+        <img src="http://image.tmdb.org/t/p/w500/{{trendSeries[i].poster_path}}">
+    </div>
+  </carousel>    
+</div>
+
+<div class="carousel-div-lg" >
+  <h3  style="color :#f7915c" class="carousel-title">
+  Series populares 
+  </h3> 
+  <carousel  arrowsOutside cellsToShow="8" style="height: 180px;">
+    <div class="carousel-cell" *ngFor="let item of trendSeries; let i = index">
+        <img src="http://image.tmdb.org/t/p/w500/{{trendSeries[i].poster_path}}">
+    </div>
+  </carousel>    
+</div>
+
+ 
 
 <div class="clamed">
   <h3 class="clamed-title">
-    Peliculas más clamadas
+    Peliculas más aclamadas
   </h3>
   
 </div>

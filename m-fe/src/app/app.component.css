@@ -1,6 +1,6 @@
 .top-container{
 	padding: 5%;
-	border:solid red 1px;
+ 
 	height: 200px;
 }
 
@@ -15,20 +15,21 @@
 	margin: 10%;
 	padding: 0 5%;
 	vertical-align: center; 
-	color: white;
+	color: white	;
 	text-align: center;
 }
 
-.carousel-div{
+.carousel-div-md{
 	height: 150px;
-	border:green solid 1px;
+ 
 	color: white;
 }
+
 .carousel-title{
 	margin :2%;
 }
 .clamed{
-	border:orange solid 1px;
+	 
 	height: 180px;
 }
 .clamed-title{
@@ -44,8 +45,17 @@
     color:white; 
 }
 
+.custom-carousel{
+	height: 55px;
+	width: 35px;
+}
 
-@media( min-height: 850px ){
+
+@media( max-width: 800px ){
+.carousel-div-lg{display: none}
+}
+
+@media( min-width: 800px ){
 .most-pop{
 	margin: 5%;
 }
@@ -53,4 +63,11 @@
 		font-size: 1.5em;
 	    height: 45px; 
  }
+.carousel-div-lg{
+	height: 250px;
+	border:green solid 1px;
+	color: white;
+}
+.carousel-div-md{display: none}
+
 }
