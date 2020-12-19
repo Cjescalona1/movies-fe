@@ -1,0 +1,56 @@
+.top-container{
+	padding: 5%;
+	border:solid red 1px;
+	height: 200px;
+}
+
+.search-bar{
+	width: 90%;
+	height: 35px;
+	margin: 0 5% 5% 5%; 
+	text-align: center;
+}
+
+.most-pop{
+	margin: 10%;
+	padding: 0 5%;
+	vertical-align: center; 
+	color: white;
+	text-align: center;
+}
+
+.carousel-div{
+	height: 150px;
+	border:green solid 1px;
+	color: white;
+}
+.carousel-title{
+	margin :2%;
+}
+.clamed{
+	border:orange solid 1px;
+	height: 180px;
+}
+.clamed-title{
+	text-align: center ; color:white ; margin-top:2%;
+}
+.input-search{
+    background-color: rgba(59,59,59,0.6) ;
+    border-radius:25px; 
+    width: 90%; 
+    margin: 1%; 
+    height: 30px; 
+    padding-left: 5%;
+    color:white; 
+}
+
+
+@media( min-height: 850px ){
+.most-pop{
+	margin: 5%;
+}
+.input-search{ 
+		font-size: 1.5em;
+	    height: 45px; 
+ }
+}
