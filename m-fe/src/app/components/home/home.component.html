@@ -1,0 +1,101 @@
+<div class="top-container" 
+style="background-image: 
+url(http://image.tmdb.org/t/p/w500/{{principal.backdrop_path}});
+background-color: #ccc;
+background-repeat: no-repeat;
+background-size: cover; 
+background-position: center; 
+">
+  <div class="search-bar"> 
+    <input 
+    class="input-search" 
+    type="text" placeholder="Buscar"> 
+  </div>
+  
+  <div class="most-pop">
+    <h1 style="font-weight: bold;">{{principal.original_title}}</h1>  
+      <h2 style="color :#f7915c">Más Popular</h2>
+      <div style="display: inline-flex;"> 
+        <div *ngIf="principal.vote_average/2 >= 4.5"> <img src="/assets/st.png" alt="">  </div>
+        <div *ngIf="principal.vote_average/2 >= 3.5"> <img src="/assets/st.png" alt="">  </div>
+        <div *ngIf="principal.vote_average/2 >= 2.5"> <img src="/assets/st.png" alt="">  </div>
+        <div *ngIf="principal.vote_average/2 >= 1.5"> <img src="/assets/st.png" alt="">  </div>
+        <div *ngIf="principal.vote_average/2 >= 0.5"> <img src="/assets/st.png" alt="">  </div>
+      </div>
+ 
+  </div>
+</div>
+
+<div  *ngIf="loadingM" class="row text-center animated fadeIn">
+  <div class="col">adfafsdfasdfaf
+    <i class="fa fa-sync fa-spin fa-5x"></i>
+  </div>
+</div>
+
+<div *ngIf="!loadingM" > 
+    <div class="carousel-div-md" >
+      <h3 style="color :#f7915c" class="carousel-title">
+      Peliculas populares 
+      </h3> 
+      <carousel   cellsToShow="4" style="height: 110px;">
+        <div class="carousel-cell" *ngFor="let item of trendMovies; let i = index">
+            <img (click)="select(item)"  src="http://image.tmdb.org/t/p/w500/{{trendMovies[i].poster_path}}">
+        </div>
+      </carousel>    
+    </div>
+
+    <div class="carousel-div-lg" >
+      <h3  style="color :#f7915c" class="carousel-title">
+      Peliculas populares 
+      </h3> 
+      <carousel cellsToShow="8" style="height: 180px;">
+        <div class="carousel-cell" *ngFor="let item of trendMovies; let i = index">
+            <img (click)="select(item)" src="http://image.tmdb.org/t/p/w500/{{trendMovies[i].poster_path}}">
+        </div>
+      </carousel>    
+    </div>
+</div>
+
+
+<div  *ngIf="loadingS" class="row text-center animated fadeIn">
+  <div class="col">adfafsdfasdfaf
+    <i class="fa fa-sync fa-spin fa-5x"></i>
+  </div>
+</div>
+ 
+<div  *ngIf="!loadingS" >
+  
+<div class="carousel-div-md" >
+  <h3 style="color :#f7915c" class="carousel-title">
+  Series populares 
+  </h3> 
+  <carousel  cellsToShow="4" style="height: 110px;">
+    <div class="carousel-cell" *ngFor="let item of trendSeries; let i = index">
+        <img (click)="select(item)" src="http://image.tmdb.org/t/p/w500/{{trendSeries[i].poster_path}}">
+    </div>
+  </carousel>    
+</div>
+
+<div class="carousel-div-lg" >
+  <h3  style="color :#f7915c" class="carousel-title">
+  Series populares 
+  </h3> 
+  <carousel  cellsToShow="8" style="height: 180px;">
+    <div class="carousel-cell" *ngFor="let item of trendSeries; let i = index">
+        <img (click)="select(item)" src="http://image.tmdb.org/t/p/w500/{{trendSeries[i].poster_path}}">
+    </div>
+  </carousel>    
+</div>
+</div>
+
+<div  *ngIf="!loadingT">
+  <div class="clamed">
+    <h3  style="color :#f7915c" class="clamed-title">
+      Peliculas más aclamadas
+    </h3>
+    
+ <div *ngFor="let item of topMovies; let i = index" style="display: inline" >
+          <img (click)="select(item)" style="width: 20%;height: 110%; padding: 0  2%" src="http://image.tmdb.org/t/p/w500/{{topMovies[i].poster_path}}">
+  </div>
+</div>
+
