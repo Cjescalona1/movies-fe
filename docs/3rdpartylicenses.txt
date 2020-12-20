@@ -23,6 +23,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
+@angular/animations
+MIT
+
 @angular/common
 MIT
 
@@ -34,6 +37,9 @@ MIT
 
 @angular/router
 MIT
+
+angular-responsive-carousel
+Apache License 2.0
 
 core-js
 MIT
