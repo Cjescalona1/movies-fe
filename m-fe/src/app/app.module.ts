@@ -13,7 +13,9 @@ import { HomeComponent } from './components/home/home.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { SerieComponent } from './components/serie/serie.component';
 import { SearchComponent } from './components/search/search.component';
- 
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './reducers/movie.reducer';
+import { FavoriteComponent } from './components/favorite/favorite.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { SearchComponent } from './components/search/search.component';
     HomeComponent,
     MovieComponent,
     SerieComponent,
-    SearchComponent
+    SearchComponent,
+    FavoriteComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,10 @@ import { SearchComponent } from './components/search/search.component';
     HttpClientModule,
     HttpClientJsonpModule,
     IvyCarouselModule,  
-    RouterModule.forRoot(ROUTES, { useHash: true })
+    RouterModule.forRoot(ROUTES, { useHash: true }),
+    StoreModule.forRoot({
+      movie:reducer
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

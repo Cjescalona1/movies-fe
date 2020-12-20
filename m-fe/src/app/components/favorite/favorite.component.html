@@ -1,0 +1,10 @@
+<div >
+
+  <h3>favorite</h3>
+  <ul>
+    <li *ngFor="let movie of movies | async">
+      <p>{{ movie.name }}</p>
+    </li>
+  </ul>
+
+</div>
