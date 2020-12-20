@@ -11,13 +11,15 @@ import { HttpClientModule, HttpClientJsonpModule } from "@angular/common/http";
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { HomeComponent } from './components/home/home.component';
 import { MovieComponent } from './components/movie/movie.component';
+import { SerieComponent } from './components/serie/serie.component';
  
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    MovieComponent
+    MovieComponent,
+    SerieComponent
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   principal: any;
   trendMovies: any[] = [];
   topMovies: any[] = [];
+  gen: any[] = [];
   trendSeries: any[] = [];
   loadingM: boolean;	
   loadingS: boolean;	
@@ -29,16 +30,17 @@ export class HomeComponent implements OnInit {
     this.loadingM = true;
     this.loadingS = true;
     this.loadingT = true;
+ 
 
     this.moviedb.getTrendingMovies()
        .subscribe((data: any) => {
-      	this.principal = data[0];
+        this.principal = data[0];
         for (var i = 0; i < 10; i++) {
         this.trendMovies[i] = data[i];
-    	this.loadingM = false;
+      this.loadingM = false;
         
         }
-		});
+    });
 		this.moviedb.getTrendingSeries()
 	     .subscribe((data2: any) => {
 	      	for (var j = 0; j < 10; j++) {
@@ -59,9 +61,17 @@ export class HomeComponent implements OnInit {
 
   }
 
-select(argument) {
-  console.log('selected:',argument ); 
+select(argument,type) { 
+  console.log('test',argument);
+
+  localStorage.setItem('element', JSON.stringify(argument));
+  localStorage.setItem('element-type', JSON.stringify(type));
+  if (type == 'm') {
   this.rout.navigate(['/movie/'+argument.id]);
+  }
+  if (type == 's') {
+  this.rout.navigate(['/serie/'+argument.id]);
+  }
   } 
 
 }

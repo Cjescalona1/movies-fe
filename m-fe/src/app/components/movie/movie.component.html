@@ -1,1 +1,37 @@
-<p>movie works!</p>
+<div style="  height: 100%; width: 100%  ">
+	
+	<div class="detail-header" style="background-image: url(http://image.tmdb.org/t/p/w500/{{movie.backdrop_path}});">
+		
+		<div style="display: flex; flex-direction: horizontal; padding: 15% 0 0 15%">
+			<div>
+				<img src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="" class="poster-img">
+				
+				<div style="margin: 10% 0; padding: 5% "> 
+				 	<div style=" display: inline-flex; margin: 2%; padding: 2%; " class="carousel-cell" *ngFor="let item of movie.genres; let i = index">
+		            <div style=" height: 120%; width: 120%; border-radius: 25px; background-color: gray; color :white; padding: 10%"><small>{{item.name}}</small></div>
+		            </div>
+				</div>
+			</div>
+
+			<div style="padding-left: 10%;">
+				<h1 style="font-weight: bold; font-size:3em; color :white;">
+					{{movie.original_title}}
+				</h1>				
+				<div style="display: inline-flex;"> 
+			        <div *ngIf="movie.vote_average/2 >= 4.5"> <img src="/assets/st.png" alt="">  </div>
+			        <div *ngIf="movie.vote_average/2 >= 3.5"> <img src="/assets/st.png" alt="">  </div>
+			        <div *ngIf="movie.vote_average/2 >= 2.5"> <img src="/assets/st.png" alt="">  </div>
+			        <div *ngIf="movie.vote_average/2 >= 1.5"> <img src="/assets/st.png" alt="">  </div>
+			        <div *ngIf="movie.vote_average/2 >= 0.5"> <img src="/assets/st.png" alt="">  </div>
+				</div>
+				<div *ngIf="movie.overview !==''" style="color:white; padding: 15% 30% 0 0;  font-size: 1.5em ; line-height: 1.8; text-align: justify;">
+					{{movie.overview}}
+				</div>
+
+				<div *ngIf="movie.overview ==''" style="color:white; padding: 50% 30% 0 0;  font-size: 2em ; line-height: 1.8; ">
+					No hay descripción disponible
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

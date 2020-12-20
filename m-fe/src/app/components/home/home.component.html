@@ -27,7 +27,7 @@ background-position: center;
 </div>
 
 <div  *ngIf="loadingM" class="row text-center animated fadeIn">
-  <div class="col">adfafsdfasdfaf
+  <div class="col"> 
     <i class="fa fa-sync fa-spin fa-5x"></i>
   </div>
 </div>
@@ -39,7 +39,7 @@ background-position: center;
       </h3> 
       <carousel   cellsToShow="4" style="height: 110px;">
         <div class="carousel-cell" *ngFor="let item of trendMovies; let i = index">
-            <img (click)="select(item)"  src="http://image.tmdb.org/t/p/w500/{{trendMovies[i].poster_path}}">
+            <img (click)="select(item, 'm')"  src="http://image.tmdb.org/t/p/w500/{{trendMovies[i].poster_path}}">
         </div>
       </carousel>    
     </div>
@@ -50,7 +50,7 @@ background-position: center;
       </h3> 
       <carousel cellsToShow="8" style="height: 180px;">
         <div class="carousel-cell" *ngFor="let item of trendMovies; let i = index">
-            <img (click)="select(item)" src="http://image.tmdb.org/t/p/w500/{{trendMovies[i].poster_path}}">
+            <img (click)="select(item,'m')" src="http://image.tmdb.org/t/p/w500/{{trendMovies[i].poster_path}}">
         </div>
       </carousel>    
     </div>
@@ -71,7 +71,7 @@ background-position: center;
   </h3> 
   <carousel  cellsToShow="4" style="height: 110px;">
     <div class="carousel-cell" *ngFor="let item of trendSeries; let i = index">
-        <img (click)="select(item)" src="http://image.tmdb.org/t/p/w500/{{trendSeries[i].poster_path}}">
+        <img (click)="select(item,'s')" src="http://image.tmdb.org/t/p/w500/{{trendSeries[i].poster_path}}">
     </div>
   </carousel>    
 </div>
@@ -82,7 +82,7 @@ background-position: center;
   </h3> 
   <carousel  cellsToShow="8" style="height: 180px;">
     <div class="carousel-cell" *ngFor="let item of trendSeries; let i = index">
-        <img (click)="select(item)" src="http://image.tmdb.org/t/p/w500/{{trendSeries[i].poster_path}}">
+        <img (click)="select(item,'s')" src="http://image.tmdb.org/t/p/w500/{{trendSeries[i].poster_path}}">
     </div>
   </carousel>    
 </div>
@@ -95,7 +95,7 @@ background-position: center;
     </h3>
     
  <div *ngFor="let item of topMovies; let i = index" style="display: inline" >
-          <img (click)="select(item)" style="width: 20%;height: 110%; padding: 0  2%" src="http://image.tmdb.org/t/p/w500/{{topMovies[i].poster_path}}">
+          <img (click)="select(item, 'm')" style="width: 20%;height: 110%; padding: 0  2%" src="http://image.tmdb.org/t/p/w500/{{topMovies[i].poster_path}}">
   </div>
 </div>
 

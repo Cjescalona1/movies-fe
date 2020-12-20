@@ -1,0 +1,12 @@
+.detail-header{
+	background-repeat: no-repeat;
+	background-position: center;  
+	background-color: #ccc;
+	background-size: cover; 
+	height: 50%;
+}
+
+.poster-img{  
+height: 300px;
+width: 200px;     
+} 

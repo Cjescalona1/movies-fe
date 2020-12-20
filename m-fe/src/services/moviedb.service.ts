@@ -45,14 +45,15 @@ export class MoviedbService implements PipeTransform{
     return this.getQuery("/movie/top_rated?").pipe(
       map((data: any) => data.results)
     );
-  }
+  } 
+  //get movie 
 
-
-
-
-
-
-  getQueryforPelicula(query: string) {
+  getMovie(id: string) {
+    return this.getQueryforMovie(`/movie/${id}`).pipe(
+      map((data: any) => data)
+    );
+  } 
+  getQueryforMovie(query: string) {
     const url = `https://api.themoviedb.org/3${query}?api_key=${
       this.apikey
       }&language=es&callback=JSONP_CALLBACK`;
@@ -61,7 +62,18 @@ export class MoviedbService implements PipeTransform{
     //por eso es importante verificar el uso de jsonp para poder hacer solicitud a otros dominios
     return this.http.jsonp(url, "");
   }
+  
+  //getSerie
+  getSerie(id: string) {
+    return this.getQueryforMovie(`/tv/${id}`).pipe(
+      map((data: any) => data)
+    );
+  }
 
+
+ 
+
+  
   getDiscoverMovies() {
     return this.getQuery("/discover/movie?sort_by=popularity.desc").pipe(
       map((data: any) => data.results)
@@ -74,12 +86,6 @@ export class MoviedbService implements PipeTransform{
     ).pipe(map((data: any) => data.results));
   }
 
-  getPelicula(id: string) {
-    return this.getQueryforPelicula(`/movie/${id}`).pipe(
-      map((data: any) => data)
-    );
-  }
-  
 
 
 }
