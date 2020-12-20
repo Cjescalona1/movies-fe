@@ -63,10 +63,7 @@ export class HomeComponent implements OnInit {
 		});  
 
   }
-
-fav(){
-  this.rout.navigate(['/favorite']);
-}
+ 
 
 select(argument,type) { 
   console.log('test',argument);
