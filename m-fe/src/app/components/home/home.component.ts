@@ -15,14 +15,16 @@ export class HomeComponent implements OnInit {
   principal: any;
   trendMovies: any[] = [];
   topMovies: any[] = [];
+  searchResult: any[] = [];
   gen: any[] = [];
   trendSeries: any[] = [];
   loadingM: boolean;	
   loadingS: boolean;	
   loadingT: boolean;	
   image: any[];
+  searchActive: boolean = false;
 
- constructor(
+  constructor(
   private moviedb: MoviedbService,
     private rout: Router
   ) {
@@ -73,5 +75,23 @@ select(argument,type) {
   this.rout.navigate(['/serie/'+argument.id]);
   }
   } 
+
+  search(pass){
+    console.log('test',pass);
+    if (pass == "" ) {
+    this.searchActive=false; 
+    }else{
+    this.searchActive=true; 
+    }
+
+    this.moviedb.getSearchMovie(pass).subscribe((data: any) => {
+      console.log(data);
+      this.searchResult = data; 
+      console.log('test', this.searchResult);
+    });
+
+    console.log('test sa',this.searchActive);
+ 
+  }
 
 }

@@ -6,13 +6,24 @@ background-repeat: no-repeat;
 background-size: cover; 
 background-position: center; 
 ">
+
+
+
+
   <div class="search-bar"> 
     <input 
+    #val
+    (keyup)="search(val.value)"
     class="input-search" 
-    type="text" placeholder="Buscar"> 
+    type="text" placeholder="Buscar">
+    <i class="fa fa-search"></i>
   </div>
+
+
+
+
   
-  <div class="most-pop">
+  <div class="most-pop" *ngIf="!searchActive">
     <h1 style="font-weight: bold;">{{principal.original_title}}</h1>  
       <h2 style="color :#f7915c">Más Popular</h2>
       <div style="display: inline-flex;"> 
@@ -21,11 +32,46 @@ background-position: center;
         <div *ngIf="principal.vote_average/2 >= 2.5"> <img src="/assets/st.png" alt="">  </div>
         <div *ngIf="principal.vote_average/2 >= 1.5"> <img src="/assets/st.png" alt="">  </div>
         <div *ngIf="principal.vote_average/2 >= 0.5"> <img src="/assets/st.png" alt="">  </div>
-      </div>
- 
+      </div> 
   </div>
 </div>
 
+
+<div *ngIf="searchActive">
+ <h3 style="color :#f7915c ;text-align: center;" class="carousel-title">
+      Resultado de busqueda 
+ </h3>
+
+ <div style="display: flex; flex-wrap: wrap;">
+  <div class="card-movie"  *ngFor="let sr of searchResult; let i = index">
+    <div 
+    (click)="select(sr,'m')" 
+    style="background-image: 
+    url(http://image.tmdb.org/t/p/w500/{{sr.poster_path}});
+    background-color: #282828;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    height: 55%;
+    border-radius: 25px 25px 0 0;
+    ">
+   </div>
+   <div style="margin: 5% ">
+    <h2>
+    {{sr.title}}
+    </h2>  
+    <h2>
+      {{sr.release_date}}
+    </h2>
+      
+
+    </div>
+  </div> 
+</div>  
+</div>
+
+
+<div *ngIf="!searchActive">
+  
 <div  *ngIf="loadingM" class="row text-center animated fadeIn">
   <div class="col"> 
     <i class="fa fa-sync fa-spin fa-5x"></i>
@@ -58,7 +104,7 @@ background-position: center;
 
 
 <div  *ngIf="loadingS" class="row text-center animated fadeIn">
-  <div class="col">adfafsdfasdfaf
+  <div class="col"> 
     <i class="fa fa-sync fa-spin fa-5x"></i>
   </div>
 </div>
@@ -95,7 +141,8 @@ background-position: center;
     </h3>
     
  <div *ngFor="let item of topMovies; let i = index" style="display: inline" >
-          <img (click)="select(item, 'm')" style="width: 20%;height: 110%; padding: 0  2%" src="http://image.tmdb.org/t/p/w500/{{topMovies[i].poster_path}}">
+          <img (click)="select(item, 'm')" style="width: 20%; padding: 0  2%" src="http://image.tmdb.org/t/p/w500/{{topMovies[i].poster_path}}">
   </div>
 </div>
 
+</div>

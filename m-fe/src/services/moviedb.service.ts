@@ -70,22 +70,11 @@ export class MoviedbService implements PipeTransform{
     );
   }
 
-
- 
-
-  
-  getDiscoverMovies() {
-    return this.getQuery("/discover/movie?sort_by=popularity.desc").pipe(
-      map((data: any) => data.results)
-    );
-  }
-
-  getBusquedaPeliculas(termino: string) {
+  // search 
+  getSearchMovie(key: string) {
     return this.getQuery(
-      `/search/movie?query=${termino}&sort_by=popularity.desc`
+      `/search/movie?query=${key}&sort_by=popularity.desc`
     ).pipe(map((data: any) => data.results));
   }
-
-
 
 }

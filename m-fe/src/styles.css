@@ -7,7 +7,7 @@
 *:focus {
     outline: none;
 }
-body { background-color: #2a2a2a }
+body { background-color: #464646 }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

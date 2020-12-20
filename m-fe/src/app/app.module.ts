@@ -12,6 +12,7 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { HomeComponent } from './components/home/home.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { SerieComponent } from './components/serie/serie.component';
+import { SearchComponent } from './components/search/search.component';
  
 
 @NgModule({
@@ -19,7 +20,8 @@ import { SerieComponent } from './components/serie/serie.component';
     AppComponent,
     HomeComponent,
     MovieComponent,
-    SerieComponent
+    SerieComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
