@@ -2,19 +2,19 @@
 	
 	<div class="detail-header" style="background-image: url(http://image.tmdb.org/t/p/w500/{{movie.backdrop_path}});">
 		
-		<div style="display: flex; flex-direction: horizontal; padding: 15% 0 0 15%">
+		<div  class="movie-container">
 			<div>
 				<img src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="" class="poster-img">
 				
-				<div style="margin: 10% 0; padding: 5% "> 
+				<div class="genres" > 
 				 	<div style=" display: inline-flex; margin: 2%; padding: 2%; " class="carousel-cell" *ngFor="let item of movie.genres; let i = index">
-		            <div style=" height: 120%; width: 120%; border-radius: 25px; background-color: gray; color :white; padding: 10%"><small>{{item.name}}</small></div>
+		            <div class="gentags" > <small>{{item.name}}</small></div>
 		            </div>
 				</div>
 			</div>
 
-			<div style="padding-left: 10%;">
-				<h1 style="font-weight: bold; font-size:3em; color :white;">
+			<div class="secdiv">
+				<h1 style="font-weight: bold; font-size:2.5em; color:white;">
 					{{movie.original_title}}
 				</h1>				
 				<div style="display: inline-flex;"> 

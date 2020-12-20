@@ -6,6 +6,38 @@
 	height: 50%;
 }
 
+.movie-container{
+	display: flex; 
+	flex-direction:row; 
+	padding: 15% 0 0 15%;
+}
+
+
+.genres{
+	margin: 10% 0; 
+}
+.gentags{
+	height: 120%;
+	width: 120%;
+	border-radius: 25px;
+	background-color: gray;
+	color :white; padding: 10%;
+}
+.secdiv{ padding-left: 10%;
+			 }
+
+@media(max-width: 768px){
+.movie-container{
+	flex-direction:column; 
+}
+.genres{
+	margin: 5% 0;  
+}
+
+.secdiv{padding-left: 0;}
+
+}
+
 .poster-img{  
 height: 300px;
 width: 200px;     
