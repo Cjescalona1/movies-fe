@@ -74,14 +74,13 @@
 	color: white;
 }
 .carousel-div-md{display: none}
-
-}
+} 
 
 .card-movie{
 	width: 20%;
 	margin:5% 5%;
 	justify-content: space-between;
-	height: 300px;
+	height: 400px;
 	border-radius: 25px;
 	background-color:#282828;
 	color:white; 

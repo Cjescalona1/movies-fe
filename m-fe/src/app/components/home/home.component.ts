@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
   loadingM: boolean;	
   loadingS: boolean;	
   loadingT: boolean;	
+  loadingSR: boolean;  
   image: any[];
   searchActive: boolean = false;
 
@@ -77,6 +78,8 @@ select(argument,type) {
   } 
 
   search(pass){
+    this.loadingSR= true;
+
     console.log('test',pass);
     if (pass == "" ) {
     this.searchActive=false; 
@@ -88,6 +91,7 @@ select(argument,type) {
       console.log(data);
       this.searchResult = data; 
       console.log('test', this.searchResult);
+      this.loadingSR = false
     });
 
     console.log('test sa',this.searchActive);

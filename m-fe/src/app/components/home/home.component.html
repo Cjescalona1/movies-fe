@@ -41,8 +41,11 @@ background-position: center;
  <h3 style="color :#f7915c ;text-align: center;" class="carousel-title">
       Resultado de busqueda 
  </h3>
+<div *ngIf="loadingSR" style=" margin-left: 25%">
+ <img  src="assets/spinner.gif" alt="Loading..." style="width: 70%"> 
+</div>
 
- <div style="display: flex; flex-wrap: wrap;">
+ <div  *ngIf="!loadingSR" style="display: flex; flex-wrap: wrap;">
   <div class="card-movie"  *ngFor="let sr of searchResult; let i = index">
     <div 
     (click)="select(sr,'m')" 
@@ -62,11 +65,10 @@ background-position: center;
     <h2>
       {{sr.release_date}}
     </h2>
-      
-
     </div>
   </div> 
 </div>  
+
 </div>
 
 
