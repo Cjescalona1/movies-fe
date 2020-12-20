@@ -1,1 +1,48 @@
-<p>serie works!</p>
+ 
+<div style="  height: 100%; width: 100%  ">
+	
+	<div class="detail-header" style="background-image: url(http://image.tmdb.org/t/p/w500/{{Serie.backdrop_path}});">
+		
+		<div  class="movie-container">
+			<div>
+				<img src="http://image.tmdb.org/t/p/w500/{{Serie.poster_path}}" alt="" class="poster-img">
+				
+				<div class="genres" > 
+				 	<div style=" display: inline-flex; margin: 2%; padding: 2%; " class="carousel-cell" *ngFor="let item of Serie.genres; let i = index">
+		            <div class="gentags" > <small>{{item.name}}</small></div>
+		            </div>
+				</div>
+			</div>
+
+			<div class="secdiv">
+				<h1 style="font-weight: bold; font-size:2.5em; color:white;">
+					{{Serie.name}}
+				</h1>				
+				<div style="display: inline-flex;"> 
+			        <div *ngIf="Serie.vote_average/2 >= 4.5"> <img src="/assets/st.png" alt="">  </div>
+			        <div *ngIf="Serie.vote_average/2 >= 3.5"> <img src="/assets/st.png" alt="">  </div>
+			        <div *ngIf="Serie.vote_average/2 >= 2.5"> <img src="/assets/st.png" alt="">  </div>
+			        <div *ngIf="Serie.vote_average/2 >= 1.5"> <img src="/assets/st.png" alt="">  </div>
+			        <div *ngIf="Serie.vote_average/2 >= 0.5"> <img src="/assets/st.png" alt="">  </div>
+				</div>
+				<div *ngIf="Serie.overview !==''" style="color:white; padding: 15% 30% 0 0;  font-size: 1.5em ; line-height: 1.8; text-align: justify;">
+					{{Serie.overview}}
+				</div>
+				
+				<div *ngIf="Serie.overview ==''" style="color:white; padding: 50% 30% 0 0;  font-size: 2em ; line-height: 1.8; ">
+					No hay descripción disponible
+				</div>
+
+				<div  style=" color:white; padding: 15% 30% 10% 0; display: flex; flex-direction: row; justify-content:space-between;
+				" >
+				<div>
+					añadir a favoritos  
+				</div>
+				<button style="" [routerLink]="'/'" >
+					regresar
+				</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
