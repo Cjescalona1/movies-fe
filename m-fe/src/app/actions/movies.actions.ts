@@ -15,7 +15,7 @@ export class AddMovie implements Action {
 
 export class RemoveMovie implements Action {
     readonly type = REMOVE_MOVIE
-    constructor(public payload: number) {}
+    constructor(public payload: Movie) {}
 }
 
 // Section 4

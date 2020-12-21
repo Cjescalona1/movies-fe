@@ -1,10 +1,13 @@
-<div >
-
-  <h3>favorite</h3>
-  <ul>
-    <li *ngFor="let movie of movies | async">
-      <p>{{ movie.name }}</p>
-    </li>
-  </ul>
-
-</div>
+  <h1 style="text-align:center; margin:5%; font-size: 3em;  color :#f7915c"  >Favorite</h1>
+  
+  <button [routerLink]="'/'">Back</button>
+  <div *ngFor="let movie of movies | async;" style="display: flex; width: 90% ; height: 25%; margin: 5%;">
+  	<div style="display :flex;flex-direction: row; justify-content: space-between;">
+	<img src="http://image.tmdb.org/t/p/w500/{{movie.poster}}" style="height: 100%;width: 40%; border-radius: 25px">
+	  	<div style="margin-top: 5%; color: lightgray">
+	  	<h2>{{ movie.name }}</h2>
+	  	<h2 style="color :#f7915c" >Emitida en {{ movie.year }}</h2>
+  		<button (click)="del(i)"> remove </button>
+		</div>	
+  	</div>
+  </div>

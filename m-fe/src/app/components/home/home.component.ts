@@ -30,6 +30,8 @@ export class HomeComponent implements OnInit {
     private rout: Router
   ) {
   
+  
+
     this.loadingM = true;
     this.loadingS = true;
     this.loadingT = true;

@@ -13,7 +13,7 @@ import * as MovieActions from '../../actions/movies.actions';
   templateUrl: './movie.component.html',
   styleUrls: ['./movie.component.css']
 })
-export class MovieComponent {
+export class MovieComponent implements OnInit {
  
 
   movieG: any = [];
@@ -26,10 +26,9 @@ export class MovieComponent {
     private router: ActivatedRoute,
     private moviedb: MoviedbService
     ) {
-
     this.loadingMovie = true;
     this.router.params.subscribe(params => {
-      this.moviedb.getMovie(params['id'])
+    this.moviedb.getMovie(params['id'])
         .subscribe(Movie => {
           this.movie = Movie;
           
@@ -53,10 +52,7 @@ export class MovieComponent {
     aux2.push({id:id, name:name, year:year, poster:poster});
     localStorage.setItem('favorite',JSON.stringify(aux2));
     console.log('defined ', aux2);
-  }
-
-
-
+    }
   }
   
 

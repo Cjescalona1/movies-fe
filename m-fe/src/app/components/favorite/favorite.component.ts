@@ -4,7 +4,10 @@ import { Store } from '@ngrx/store';
 import { Movie } from '../../models/movie.model';
 import { AppState } from '../../app.state';
 
-
+import { Store } from '@ngrx/store';
+import { Movie } from '../../models/movie.model';
+import { AppState } from '../../app.state';
+import * as MovieActions from '../../actions/movies.actions';
 
 @Component({
   selector: 'app-favorite',
@@ -19,7 +22,13 @@ export class FavoriteComponent implements OnInit {
     this.movies = store.select('movie');
   }
 
-  ngOnInit(): void {
-  }
+  delMovie(index){
+  	this.store.dispatch(new MovieActions.RemoveMovie(index))
+  };
+
+  del(pass){
+  	this.delMovie(pass);
+  };
+
 
 }
