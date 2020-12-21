@@ -16,6 +16,11 @@
 .genres{
 	margin: 10% 0; 
 }
+
+.buttonM{
+height: 120%; padding: 5%; background-color: lightgray; color:gray; border-radius: 25px
+}
+
 .gentags{
 	height: 120%;
 	width: 120%;
