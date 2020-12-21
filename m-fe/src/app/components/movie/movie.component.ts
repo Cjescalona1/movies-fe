@@ -42,6 +42,20 @@ export class MovieComponent {
 
   addMovie(id, name, year, poster){
   this.store.dispatch(new MovieActions.AddMovie({id:id, name:name, year:year, poster:poster}))
+  
+  if (localStorage.getItem('favorite') == undefined) {
+    let aux = [];
+    aux.push({id:id, name:name, year:year, poster:poster});
+    localStorage.setItem('favorite',JSON.stringify(aux));
+  }else{
+    let aux2 = JSON.parse(localStorage.getItem('favorite'));
+    localStorage.removeItem('favorite');
+    aux2.push({id:id, name:name, year:year, poster:poster});
+    localStorage.setItem('favorite',JSON.stringify(aux2));
+    console.log('defined ', aux2);
+  }
+
+
 
   }
   
