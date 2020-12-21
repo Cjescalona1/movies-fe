@@ -1,9 +1,11 @@
 # movies-fe
 
-//instalar 
+//instalar
+
 $ npm install 
 
 //ejecutar proyecto
+
 $ ng serve 
 
 //live demo
