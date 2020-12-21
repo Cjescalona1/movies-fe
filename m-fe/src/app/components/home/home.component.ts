@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
     private rout: Router
   ) {
   
-  
+
 
     this.loadingM = true;
     this.loadingS = true;
@@ -65,7 +65,9 @@ export class HomeComponent implements OnInit {
 		});  
 
   }
- 
+goFav(){ 
+    this.rout.navigate(['/favorite/']);
+    };
 
 select(argument,type) { 
   console.log('test',argument);

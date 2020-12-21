@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
-import { MoviedbService } from '../services/moviedb.service'; 
-import { addMovie } from './components/movie/movie.component';
+import { MoviedbService } from '../services/moviedb.service';  
 
-import { Store } from '@ngrx/store';
-import { Movie } from '../../models/movie.model';
-import { AppState } from '../../app.state';
+import { Store } from '@ngrx/store'; 
+import { AppState } from './app.state';
 import * as MovieActions from './actions/movies.actions';
 
 @Component({
@@ -12,7 +10,7 @@ import * as MovieActions from './actions/movies.actions';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 }) 
-export class AppComponent implements OnInit {
+export class AppComponent {
 
 	movies: [];
 

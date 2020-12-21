@@ -13,7 +13,7 @@ import * as MovieActions from '../../actions/movies.actions';
   templateUrl: './movie.component.html',
   styleUrls: ['./movie.component.css']
 })
-export class MovieComponent implements OnInit {
+export class MovieComponent {
  
 
   movieG: any = [];
@@ -55,7 +55,6 @@ export class MovieComponent implements OnInit {
     }
   }
   
-
   addFav(pass){ 
     this.addMovie(pass.id,pass.title,pass.release_date, pass.poster_path)
   } 

@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { Store } from '@ngrx/store';
-import { Movie } from '../../models/movie.model';
-import { AppState } from '../../app.state';
+import { Observable } from 'rxjs/Observable';   
 
 import { Store } from '@ngrx/store';
 import { Movie } from '../../models/movie.model';
@@ -14,7 +11,7 @@ import * as MovieActions from '../../actions/movies.actions';
   templateUrl: './favorite.component.html',
   styleUrls: ['./favorite.component.css']
 })
-export class FavoriteComponent implements OnInit {
+export class FavoriteComponent {
  
   movies: Observable<Movie[]>;
  
@@ -27,6 +24,7 @@ export class FavoriteComponent implements OnInit {
   };
 
   del(pass){
+  	console.log('pass',pass);
   	this.delMovie(pass);
   };
 
