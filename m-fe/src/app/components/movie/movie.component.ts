@@ -56,6 +56,7 @@ export class MovieComponent {
   }
   
   addFav(pass){ 
+    alert("Agregado a Favoritos");
     this.addMovie(pass.id,pass.title,pass.release_date, pass.poster_path)
   } 
 }

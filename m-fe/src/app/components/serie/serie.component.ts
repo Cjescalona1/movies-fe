@@ -57,6 +57,7 @@ export class SerieComponent {
   }
   
   addFav(pass){ 
+    alert("Agregado a Favoritos");
     this.addMovie(pass.id,pass.name,pass.first_air_date, pass.poster_path)
   } 
 }

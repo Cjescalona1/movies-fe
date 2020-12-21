@@ -30,9 +30,6 @@ color:gray;
 border-radius: 25px;
 text-align: center;
 }
-
-
-
 @media( max-width: 768px){
 
 .buttonM{
