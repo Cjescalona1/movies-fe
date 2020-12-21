@@ -1,12 +1,32 @@
 
+
+
+
 .buttonM{
-width: 10%;
+width: 100px;
 height: 1.5em; 
-padding: 3%;
+padding: 10px;
 float: right;  
 background-color: 
 lightgray; 
 color:gray; 
 border-radius: 25px;
 margin-right:10%;
+text-align: center;
+}
+
+@media( max-width: 768px){
+
+.buttonM{
+width: 100px;
+height: 1.5em; 
+padding: 10px;
+float: right;  
+background-color: 
+lightgray; 
+color:gray; 
+border-radius: 25px;
+margin-right:10%;
+text-align: center;
+}
 }

@@ -17,10 +17,38 @@
 	margin: 10% 0; 
 }
 
+
 .buttonM{
-height: 120%; padding: 5%; background-color: lightgray; color:gray; border-radius: 25px
+width: 180px;
+height: 1.5em; 
+padding: 10px;
+margin: 0 5%;
+float: right;  
+background-color: 
+lightgray; 
+color:gray; 
+border-radius: 25px;
+text-align: center;
 }
 
+
+
+@media( max-width: 768px){
+
+.buttonM{
+width: 180px;
+height: 2.5em; 
+padding: 10px;
+margin: 0 5%;
+float: right;  
+background-color: 
+lightgray; 
+color:gray; 
+border-radius: 25px;
+text-align: center;
+}
+
+}
 .gentags{
 	height: 120%;
 	width: 120%;
